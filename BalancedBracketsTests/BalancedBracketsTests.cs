@@ -75,7 +75,7 @@ namespace BalancedBracketsTests
         //Test 9
 
         [TestMethod]
-        public void BackwardsBracketsReturnsFalse()
+        public void UnbalancedBracketsReturnsFalse()
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("]["));
         }
@@ -91,7 +91,7 @@ namespace BalancedBracketsTests
         //Test 11
 
         [TestMethod]
-        public void BackwardsBracketsInsideCharsReturnsFalse()
+        public void UnbalancedBracketsInsideCharsReturnsFalse()
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("Launch]Code["));
         }
@@ -99,9 +99,17 @@ namespace BalancedBracketsTests
         //Test 12
 
         [TestMethod] 
-        public void ExcessWhiteSpaceBetweenBackwardsBracketsReturnsFalse()
+        public void ExcessWhiteSpaceBetweenUnbalancedBracketsReturnsFalse()
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("]           ["));
         }
+
+        //Test 13
+
+        [TestMethod]
+        public void UnbalancedBracketsWithBalancedBracketsReturnsFalse()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("][LaunchCode]["));
+        }        
     }
 }
